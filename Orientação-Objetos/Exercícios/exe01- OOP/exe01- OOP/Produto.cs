@@ -31,5 +31,10 @@ namespace exe01__OOP
             this.quantidade -= quantidade;
         }
 
+        public override string ToString()
+        {
+            return "Nome: " + this.Nome + " Preco: " + this.Preco + " Quantidade: " + this.quantidade;  
+        }
+
     }
 }

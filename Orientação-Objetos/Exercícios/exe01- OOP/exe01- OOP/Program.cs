@@ -20,7 +20,8 @@ namespace exe01__OOP
                 Console.WriteLine("[2] Consultar Valor de estoque de um produto");
                 Console.WriteLine("[3] Adicionar Produtos");
                 Console.WriteLine("[4] Remover Produtos");
-                Console.WriteLine("[5] Sair do Programa");
+                Console.WriteLine("[5] Exibir informaçoes do Produto" );
+                Console.WriteLine("[6] Sair do Programa");
 
                 opcao = int.Parse(Console.ReadLine());
 
@@ -110,7 +111,24 @@ namespace exe01__OOP
                         }
 
                         break;
+
                     case 5:
+                        Console.WriteLine("Informe ID do produto: ");
+
+                        buscaId = int.Parse(Console.ReadLine());
+
+                        produtoFind = produtos.Find(produto => produto.Id == buscaId);
+
+                        if (produtoFind == null)
+                        {
+                            Console.WriteLine("Produto não encontrado!");
+                        }
+                        else
+                        {
+                            Console.WriteLine(produtoFind);
+                        }
+                        break;
+                    case 6:
                         Console.WriteLine("Saindo...");
                         Environment.Exit(0);
                         break;
@@ -118,7 +136,7 @@ namespace exe01__OOP
                         Console.WriteLine("Caracter Inválido!! Digite uma opção válida");
                         break;
                 }
-            }while (opcao != 5) ;
+            }while (opcao != 6) ;
         }
 
     }
