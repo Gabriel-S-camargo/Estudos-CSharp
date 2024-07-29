@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace exe01__OOP
+﻿namespace exe01__OOP
 {
     internal class Program
     {
@@ -8,7 +6,7 @@ namespace exe01__OOP
         {
             Console.WriteLine("SISTEMA DE ESTOQUE");
             int opcao = 0;
-            
+
             List<Produto> produtos = new List<Produto>();
 
             int id = 1;
@@ -20,12 +18,13 @@ namespace exe01__OOP
                 Console.WriteLine("[2] Consultar Valor de estoque de um produto");
                 Console.WriteLine("[3] Adicionar Produtos");
                 Console.WriteLine("[4] Remover Produtos");
-                Console.WriteLine("[5] Exibir informaçoes do Produto" );
+                Console.WriteLine("[5] Exibir informaçoes do Produto");
                 Console.WriteLine("[6] Sair do Programa");
 
                 opcao = int.Parse(Console.ReadLine());
 
-                switch (opcao){
+                switch (opcao)
+                {
 
                     case 1:
                         Console.WriteLine("Digite o nome do produto");
@@ -40,7 +39,7 @@ namespace exe01__OOP
                         Produto produto = new Produto(id, nome, preco, quantide);
 
                         produtos.Add(produto);
-                        
+
                         id++;
 
                         break;
@@ -53,7 +52,7 @@ namespace exe01__OOP
 
                         Produto produtoFind = produtos.Find(produto => produto.Id == buscaId);
 
-                        if(produtoFind == null)
+                        if (produtoFind == null)
                         {
                             Console.WriteLine("Produto não encontrado!");
                         }
@@ -136,7 +135,7 @@ namespace exe01__OOP
                         Console.WriteLine("Caracter Inválido!! Digite uma opção válida");
                         break;
                 }
-            }while (opcao != 6) ;
+            } while (opcao != 6);
         }
 
     }
