@@ -20,13 +20,9 @@ namespace PrimeiroProjeto
             trianguloY.B = double.Parse(Console.ReadLine());
             trianguloY.C = double.Parse(Console.ReadLine());
 
-            double p = (trianguloX.A + trianguloX.B + trianguloX.C) / 2.0;
+            double areaX = trianguloX.calcularArea();
 
-            double areaX = Math.Sqrt(p * (p - trianguloX.A) * (p - trianguloX.B) * (p - trianguloX.C));
-
-            p = (trianguloY.A + trianguloY.B + trianguloY.C) / 2.0;
-
-            double areaY = Math.Sqrt(p * (p - trianguloY.A) * (p - trianguloY.B) * (p - trianguloY.C));
+            double areaY = trianguloY.calcularArea();
 
             Console.WriteLine("Area de X: " + areaX.ToString("F"));
             Console.WriteLine("Area de Y: " + areaY.ToString("F"));
