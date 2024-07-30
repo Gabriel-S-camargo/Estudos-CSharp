@@ -12,7 +12,9 @@ namespace exe02_MembrosEstaticos
             Console.WriteLine("Informe quantiadade de dolar desejado: ");
             double quantidadeDol = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Valor a ser Pago em reais: " + ConversorDeMoeda.calcularTotalReal(cotacao, quantidadeDol).ToString("F2"));
+            Console.WriteLine("Valor a ser Pago em reais: " + ConversorDeMoeda
+                .calcularTotalReal(cotacao, quantidadeDol)
+                .ToString("F2"));
         }
     }
 }
