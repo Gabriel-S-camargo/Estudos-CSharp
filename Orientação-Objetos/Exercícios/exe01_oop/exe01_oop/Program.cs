@@ -1,4 +1,6 @@
-﻿namespace exe01__OOP
+﻿using System;
+
+namespace exe01_oop
 {
     internal class Program
     {
