@@ -52,8 +52,8 @@ namespace exe01_oop
 
                         int buscaId = int.Parse(Console.ReadLine());
 
-                        Produto produtoFind = produtos.Find(produto => produto.Id == buscaId);
-
+                        Produto produtoFind = produtos.Find(produto => produto.GetId() == buscaId);
+                        
                         if (produtoFind == null)
                         {
                             Console.WriteLine("Produto não encontrado!");
@@ -71,7 +71,7 @@ namespace exe01_oop
 
                         buscaId = int.Parse(Console.ReadLine());
 
-                        produtoFind = produtos.Find(produto => produto.Id == buscaId);
+                        produtoFind = produtos.Find(produto => produto.GetId() == buscaId);
 
                         if (produtoFind == null)
                         {
@@ -84,7 +84,7 @@ namespace exe01_oop
 
                             produtoFind.adicionarProdutos(quantidadeAdd);
 
-                            Console.WriteLine("Quantidade em estoque atual: " + produtoFind.quantidade);
+                            Console.WriteLine("Quantidade em estoque atual: " + produtoFind.GetQuantidade());
                         }
 
                         break;
@@ -95,7 +95,7 @@ namespace exe01_oop
 
                         buscaId = int.Parse(Console.ReadLine());
 
-                        produtoFind = produtos.Find(produto => produto.Id == buscaId);
+                        produtoFind = produtos.Find(produto => produto.GetId() == buscaId);
 
                         if (produtoFind == null)
                         {
@@ -106,9 +106,9 @@ namespace exe01_oop
                             Console.WriteLine("Digite o valor que deseja Retirar no estoque:");
                             int quantidadeSub = int.Parse(Console.ReadLine());
 
-                            produtoFind.adicionarProdutos(quantidadeSub);
+                            produtoFind.removerProdutos(quantidadeSub);
 
-                            Console.WriteLine("Quantidade em estoque atual: " + produtoFind.quantidade);
+                            Console.WriteLine("Quantidade em estoque atual: " + produtoFind.GetQuantidade());
                         }
 
                         break;
@@ -118,7 +118,7 @@ namespace exe01_oop
 
                         buscaId = int.Parse(Console.ReadLine());
 
-                        produtoFind = produtos.Find(produto => produto.Id == buscaId);
+                        produtoFind = produtos.Find(produto => produto.GetId() == buscaId);
 
                         if (produtoFind == null)
                         {

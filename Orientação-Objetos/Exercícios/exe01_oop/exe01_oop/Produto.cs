@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace exe01_oop
 {
-    public class Produto
+    class Produto
     {
-        public int Id { get; set; }
-        public string Nome { get; set; } = string.Empty;
-        public double Preco { get; set; }
-        public int quantidade { get; set; }
+        private int Id { get; set; }
+        private string Nome { get; set; } = string.Empty;
+        private double Preco { get; set; }
+        private int quantidade { get; set; }
 
         public Produto(int id, string nome, double preco, int quantidade)
         {
@@ -21,6 +21,44 @@ namespace exe01_oop
             this.quantidade = quantidade;
         }
 
+        public int GetId()
+        {
+            return this.Id;
+        }
+        public void SetId(int id)
+        {
+            this.Id = id;
+        }
+
+       public string GetNome()
+        {
+            return this.Nome;
+        }
+
+        public void SetNome(string nome)
+        {
+            this.Nome = nome;
+        }
+
+        public double GetPreco()
+        {
+            return this.Preco;
+        }
+
+        public void SetPreco(double preco)
+        {
+            this.Preco = preco;
+        }
+
+        public int GetQuantidade()
+        {
+            return this.quantidade;
+        }
+
+        public void SetQuantidade(int quantidade)
+        {
+            this.quantidade = quantidade;
+        }
         public double valorTotalEmEstoque()
         {
             return this.Preco * this.quantidade;
