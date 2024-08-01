@@ -52,7 +52,7 @@ namespace exe01_oop
 
                         int buscaId = int.Parse(Console.ReadLine());
 
-                        Produto produtoFind = produtos.Find(produto => produto.GetId() == buscaId);
+                        Produto produtoFind = produtos.Find(produto => produto.Id == buscaId);
                         
                         if (produtoFind == null)
                         {
@@ -71,7 +71,7 @@ namespace exe01_oop
 
                         buscaId = int.Parse(Console.ReadLine());
 
-                        produtoFind = produtos.Find(produto => produto.GetId() == buscaId);
+                        produtoFind = produtos.Find(produto => produto.Id == buscaId);
 
                         if (produtoFind == null)
                         {
@@ -84,7 +84,7 @@ namespace exe01_oop
 
                             produtoFind.adicionarProdutos(quantidadeAdd);
 
-                            Console.WriteLine("Quantidade em estoque atual: " + produtoFind.GetQuantidade());
+                            Console.WriteLine("Quantidade em estoque atual: " + produtoFind.Quantidade);
                         }
 
                         break;
@@ -95,7 +95,7 @@ namespace exe01_oop
 
                         buscaId = int.Parse(Console.ReadLine());
 
-                        produtoFind = produtos.Find(produto => produto.GetId() == buscaId);
+                        produtoFind = produtos.Find(produto => produto.Id == buscaId);
 
                         if (produtoFind == null)
                         {
@@ -108,7 +108,7 @@ namespace exe01_oop
 
                             produtoFind.removerProdutos(quantidadeSub);
 
-                            Console.WriteLine("Quantidade em estoque atual: " + produtoFind.GetQuantidade());
+                            Console.WriteLine("Quantidade em estoque atual: " + produtoFind.Quantidade);
                         }
 
                         break;
@@ -118,7 +118,7 @@ namespace exe01_oop
 
                         buscaId = int.Parse(Console.ReadLine());
 
-                        produtoFind = produtos.Find(produto => produto.GetId() == buscaId);
+                        produtoFind = produtos.Find(produto => produto.Id == buscaId);
 
                         if (produtoFind == null)
                         {
