@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using XadrezConsole.tabuleiro;
 
+using XadrezConsole.xadrez;
 
 namespace XadrezConsole
 {
@@ -24,7 +25,7 @@ namespace XadrezConsole
                     else
                     {
 
-                    Console.Write(tab.peca(j, i) + " ");
+                    Console.Write(tab.peca(i,j) + " ");
                     }
 
                 }

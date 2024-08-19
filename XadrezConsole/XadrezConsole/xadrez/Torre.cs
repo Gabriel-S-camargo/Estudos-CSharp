@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using XadrezConsole.tabuleiro;
 
 namespace XadrezConsole.xadrez
 {
     class Torre : Peca
     {
-        public Torre(Tabuleiro tab, Cor cor) : base(tab, cor)
+        public Torre(Tabuleiro tab, Cor cor) : base(tab, cor) 
         {
 
         }
@@ -18,6 +19,5 @@ namespace XadrezConsole.xadrez
         {
             return "T";
         }
-
     }
 }
