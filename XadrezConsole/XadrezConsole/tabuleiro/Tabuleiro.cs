@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace XadrezConsole.tabuleiro
+{
+    class Tabuleiro
+    {
+        public int linhas { get; set; }
+        public int colunas { get; set; }
+        private Peca[,] pecas;
+
+        public Tabuleiro(int linhas, int colunas)
+        {
+            this.linhas = linhas;
+            this.colunas = colunas;
+            pecas = new Peca[ linhas, colunas ];
+        }
+
+        public Peca peca(int linhas, int colunas)
+        {
+            return pecas[linhas, colunas];
+        }
+
+        public void colocarPeca(Peca p, Posicao pos)
+        {
+            // basicamente ta pegando uma peça da matriz de peças e dando uma posicao 
+            pecas[pos.linha, pos.coluna] = p;
+            p.posicao = pos;
+        }
+    }
+}
