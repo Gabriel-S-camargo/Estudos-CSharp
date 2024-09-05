@@ -22,9 +22,14 @@ namespace XadrezConsole.tabuleiro
             this.qtdMovimentos = 0;
         }
 
-        public void incrementarQteMovimento()
+        public void incrementarQteMovimentos()
         {
             qtdMovimentos++;
+        }
+
+        public void decrementarQteMovimento()
+        {
+            qtdMovimentos--;
         }
 
         public bool existeMovimentosPossiveis()
