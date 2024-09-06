@@ -47,14 +47,14 @@ namespace XadrezConsole
             ConsoleColor aux = Console.ForegroundColor;
             Console.ForegroundColor = ConsoleColor.Yellow;
             imprimirConjunto(partida.pecasCapturadas(Cor.Preta));
-            Console.ForegroundColor = aux;  
+            Console.ForegroundColor = aux;
             Console.WriteLine();
         }
 
         public static void imprimirConjunto(HashSet<Peca> conjunto)
         {
             Console.Write("[");
-            foreach(Peca x in conjunto)
+            foreach (Peca x in conjunto)
             {
                 Console.Write(x + " ");
             }
@@ -63,25 +63,51 @@ namespace XadrezConsole
         }
         public static void tabuleiroStart(Tabuleiro tab)
         {
+            Console.WriteLine("    * * * * * * * *");
             for (int i = 0; i < tab.linhas; i++)
             {
                 Console.Write(8 - i + " ");
+                Console.Write("* ");
                 for (int j = 0; j < tab.colunas; j++)
                 {
                     impromirPeca(tab.peca(i, j));
                 }
+                Console.Write("* ");
                 Console.WriteLine();
             }
-            Console.WriteLine("  A B C D E F G H");
+            Console.WriteLine("    * * * * * * * *");
+            Console.WriteLine("    A B C D E F G H");
         }
 
         public static PosicaoXadrez lerPosicaoXadrez()
         {
             string s = Console.ReadLine();
-            char coluna = s[0];
-            int linha = int.Parse(s[1] + "");
-            return new PosicaoXadrez(coluna, linha);
+
+            if (string.IsNullOrEmpty(s))
+            {
+                throw new TabuleiroException("Erro de entrada vazia");
+            }
+
+            if (s.Length == 2)
+            {
+                char coluna = s[0];
+                int linha;
+
+                if (char.IsLetter(coluna) && int.TryParse(s[1] + "", out linha))
+                {
+                    return new PosicaoXadrez(coluna, linha);
+                }
+                else
+                {
+                    throw new TabuleiroException("Entrada Invertida !! Primeiro Letra depois Numero");
+                }
+            }
+            else
+            {
+                throw new TabuleiroException("Entrada deve conter exatamente dois caracteres.");
+            }
         }
+
 
         public static void impromirPeca(Peca peca)
         {
@@ -112,10 +138,11 @@ namespace XadrezConsole
 
             ConsoleColor fundoOriginal = Console.BackgroundColor;
             ConsoleColor fundoAlterado = ConsoleColor.DarkGray;
-
+            Console.WriteLine("    * * * * * * * *");
             for (int i = 0; i < tab.linhas; i++)
             {
                 Console.Write(8 - i + " ");
+                Console.Write("* ");
                 for (int j = 0; j < tab.colunas; j++)
                 {
                     if (posicoesPossiveis[i, j])
@@ -130,9 +157,11 @@ namespace XadrezConsole
                     impromirPeca(tab.peca(i, j));
                     Console.BackgroundColor = fundoOriginal;
                 }
+                Console.Write("* ");
                 Console.WriteLine();
             }
-            Console.WriteLine("  A B C D E F G H");
+            Console.WriteLine("    * * * * * * * *");
+            Console.WriteLine("    A B C D E F G H");
             Console.BackgroundColor = fundoOriginal;
         }
     }

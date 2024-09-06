@@ -27,6 +27,10 @@ namespace XadrezConsole.tabuleiro
         // Overload para pegar a peca pela posicao
         public Peca peca(Posicao pos)
         {
+            if (!posicaoValida(pos))
+            {
+                throw new TabuleiroException("Posicao Inexistente");
+            }
             return pecas[pos.linha, pos.coluna];
         }
 
