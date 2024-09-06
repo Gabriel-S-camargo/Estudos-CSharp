@@ -76,7 +76,6 @@ namespace XadrezConsole.xadrez
 
             turno++;
             mudaJogador();
-            executaMovimento(origem, destino);
         }
 
         public void mudaJogador()
