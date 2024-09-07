@@ -8,6 +8,7 @@ namespace XadrezConsole.tabuleiro
 {
     class Tabuleiro
     {
+
         public int linhas { get; set; }
         public int colunas { get; set; }
         private Peca[,] pecas;
@@ -16,7 +17,7 @@ namespace XadrezConsole.tabuleiro
         {
             this.linhas = linhas;
             this.colunas = colunas;
-            pecas = new Peca[ linhas, colunas ];
+            pecas = new Peca[linhas, colunas];
         }
 
         public Peca peca(int linha, int coluna)
@@ -24,13 +25,8 @@ namespace XadrezConsole.tabuleiro
             return pecas[linha, coluna];
         }
 
-        // Overload para pegar a peca pela posicao
         public Peca peca(Posicao pos)
         {
-            if (!posicaoValida(pos))
-            {
-                throw new TabuleiroException("Posicao Inexistente");
-            }
             return pecas[pos.linha, pos.coluna];
         }
 
@@ -44,16 +40,16 @@ namespace XadrezConsole.tabuleiro
         {
             if (existePeca(pos))
             {
-                throw new TabuleiroException("Ja existe uma peca nessa posicao");
+                throw new TabuleiroException("Já existe uma peça nessa posição!");
             }
-            
-            // basicamente ta pegando uma peça da matriz de peças e dando uma posicao 
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos;
         }
 
-        public Peca retirarPeca(Posicao pos) {
-            if (peca(pos) == null) {
+        public Peca retirarPeca(Posicao pos)
+        {
+            if (peca(pos) == null)
+            {
                 return null;
             }
             Peca aux = peca(pos);
@@ -64,11 +60,10 @@ namespace XadrezConsole.tabuleiro
 
         public bool posicaoValida(Posicao pos)
         {
-            if(pos.linha < 0 || pos.linha >= linhas || pos.coluna <0 || pos.coluna >= colunas)
+            if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
             {
                 return false;
             }
-
             return true;
         }
 
@@ -76,7 +71,7 @@ namespace XadrezConsole.tabuleiro
         {
             if (!posicaoValida(pos))
             {
-                throw new TabuleiroException("Posicao Inválida");
+                throw new TabuleiroException("Posição inválida!");
             }
         }
     }

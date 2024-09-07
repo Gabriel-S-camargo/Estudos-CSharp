@@ -63,19 +63,20 @@ namespace XadrezConsole
         }
         public static void tabuleiroStart(Tabuleiro tab)
         {
-            Console.WriteLine("    * * * * * * * *");
+            Console.WriteLine("    _______________");
+            Console.WriteLine();
             for (int i = 0; i < tab.linhas; i++)
             {
                 Console.Write(8 - i + " ");
-                Console.Write("* ");
+                Console.Write("| ");
                 for (int j = 0; j < tab.colunas; j++)
                 {
                     impromirPeca(tab.peca(i, j));
                 }
-                Console.Write("* ");
+                Console.Write("| ");
                 Console.WriteLine();
             }
-            Console.WriteLine("    * * * * * * * *");
+            Console.WriteLine("    _______________");
             Console.WriteLine("    A B C D E F G H");
         }
 
@@ -138,7 +139,8 @@ namespace XadrezConsole
 
             ConsoleColor fundoOriginal = Console.BackgroundColor;
             ConsoleColor fundoAlterado = ConsoleColor.DarkGray;
-            Console.WriteLine("    * * * * * * * *");
+            Console.WriteLine("    _______________");
+            Console.WriteLine();
             for (int i = 0; i < tab.linhas; i++)
             {
                 Console.Write(8 - i + " ");
@@ -160,7 +162,7 @@ namespace XadrezConsole
                 Console.Write("* ");
                 Console.WriteLine();
             }
-            Console.WriteLine("    * * * * * * * *");
+            Console.WriteLine("    _______________");
             Console.WriteLine("    A B C D E F G H");
             Console.BackgroundColor = fundoOriginal;
         }
