@@ -144,7 +144,7 @@ namespace XadrezConsole
             for (int i = 0; i < tab.linhas; i++)
             {
                 Console.Write(8 - i + " ");
-                Console.Write("* ");
+                Console.Write("| ");
                 for (int j = 0; j < tab.colunas; j++)
                 {
                     if (posicoesPossiveis[i, j])
